@@ -5,8 +5,8 @@ import { renderWithRouterMatchAndProvider } from "../../../../utils/test-helpers
 
 it("renders fields", () => {
   const { getByAltText } = renderWithRouterMatchAndProvider(PokemonList, {
-    route: "/pokemon/bulbasaur",
-    path: "/pokemon/:name",
+    route: "/pokemon",
+    path: "/pokemon",
   });
 
   expect(getByAltText("pokemon logo")).toBeTruthy();
