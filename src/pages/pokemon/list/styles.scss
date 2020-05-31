@@ -1,0 +1,61 @@
+@import "../../../styles/global.scss";
+
+.listPageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  max-width: $breakpoint-lg;
+  .loadingIndicator {
+  }
+  .listPageHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    img {
+      min-width: 200px;
+      width: 20%;
+      height: auto;
+      margin: 24px;
+    }
+    .headerText {
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+    }
+  }
+  .listWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .pokemonListItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $color-light-gray;
+      width: 100%;
+      border: 1px solid $color-dark-gray;
+      border-radius: 4px;
+      height: 150px;
+      img {
+        margin: auto;
+      }
+      span {
+        margin: 12px;
+      }
+
+      margin-top: 12px;
+
+      @media (min-width: $breakpoint-md) {
+        width: 48%;
+      }
+      @media (min-width: $breakpoint-lg) {
+        width: 32%;
+      }
+    }
+    .pokemonListItem:hover {
+      background-color: $color-gray;
+    }
+  }
+}

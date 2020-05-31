@@ -1,0 +1,45 @@
+@import "../../../styles/global.scss";
+
+.detailPageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  .detailExit {
+    align-self: flex-end;
+    padding: 12px;
+  }
+  .detailExit:hover {
+    color: $color-red;
+  }
+  .detailCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-light-gray;
+    min-width: 400px;
+    border: 1px solid $color-dark-gray;
+    border-radius: 4px;
+    height: 400px;
+    overflow: auto;
+    img {
+      margin: auto;
+      min-width: 64px;
+    }
+    .detailFeaturesContainer > div {
+      margin: 12px;
+    }
+    .detailFeaturesContainer {
+      width: 100%;
+    }
+    .detailTitleText {
+      font-size: $font-size-16;
+      font-weight: $font-weight-bold;
+    }
+    .detailValueText {
+      font-size: $font-size-14;
+    }
+
+    margin-top: 12px;
+  }
+}
