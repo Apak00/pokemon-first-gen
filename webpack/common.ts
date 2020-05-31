@@ -8,6 +8,6 @@ module.exports = {
     publicPath: "/",
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx", ".scss"],
+    extensions: [".tsx", ".ts", ".js", ".jsx", ".scss", ".png"],
   },
 };

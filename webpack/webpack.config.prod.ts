@@ -13,6 +13,20 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        loader: [
+          { loader: "style-loader" },
+          { loader: "css-modules-typescript-loader" },
+          { loader: "css-loader", options: { modules: true } },
+          { loader: "sass-loader" },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
+      },
     ],
   },
   plugins: [

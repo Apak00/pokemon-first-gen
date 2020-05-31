@@ -5,7 +5,12 @@ import { getPokemonListAC } from "../actions";
 import { numberOfFirstGenerationPokemon } from "./constants";
 import { PokemonListItem } from "../interfaces";
 import { GlobalState } from "../../../store/interfaces";
+import { generateImgUrl } from "../../../utils/image-url-generator";
+import pokemonLogo from "../../../assets/pokemon.png";
 import styles from "./styles.scss";
+import { Link } from "react-router-dom";
+import appRoutes from "../../../app-routes";
+import { LoadingIndicator } from "../../../components/loading-indicator";
 
 export const PokemonList = () => {
   const dispatch: Dispatch = useDispatch();
@@ -13,20 +18,37 @@ export const PokemonList = () => {
   const pokemonList: GlobalState["pokemon"]["pokemonList"] = useSelector(
     (state: GlobalState) => state.pokemon.pokemonList
   );
+  const isPokemonListFetching: GlobalState["pokemon"]["isPokemonListFetching"] = useSelector(
+    (state: GlobalState) => state.pokemon.isPokemonListFetching
+  );
 
   useEffect(() => {
-    console.log("PAGE LANDED");
     dispatch(getPokemonListAC(numberOfFirstGenerationPokemon));
   }, []);
 
   return (
-    <div>
-      List page
-      {pokemonList.map((item: PokemonListItem) => (
-        <div key={item.name} className={styles.pokemonListItem}>
-          {item.name}
+    <div className={styles.listPageContainer}>
+      <div className={styles.listPageHeader}>
+        <img src={pokemonLogo} />
+        <span className={styles.headerText}>Generation 1</span>
+        <span>{pokemonList?.length} Pokemon</span>
+      </div>
+      {isPokemonListFetching ? (
+        <LoadingIndicator />
+      ) : (
+        <div className={styles.listWrapper}>
+          {pokemonList.map((item: PokemonListItem) => (
+            <Link
+              key={item.name}
+              className={styles.pokemonListItem}
+              to={appRoutes.pokemonDetail(item.name)}
+            >
+              <img src={generateImgUrl(item.name)} />
+              <span>{item.name}</span>
+            </Link>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 };

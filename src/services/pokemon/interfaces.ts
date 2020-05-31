@@ -1,4 +1,4 @@
-import { PokemonListItem } from "../../pages/pokemon/interfaces";
+import { PokemonListItem, PokemonDetail } from "../../pages/pokemon/interfaces";
 
 export interface PokemonListResponse {
   // total number of items
@@ -10,3 +10,5 @@ export interface PokemonListResponse {
   // Actual list
   results: PokemonListItem[];
 }
+
+export type PokemonDetailResponse = PokemonDetail;

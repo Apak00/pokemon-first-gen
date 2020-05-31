@@ -31,13 +31,13 @@ export const setPokemonListAC: (
 
 export interface GetPokemonDetailAction {
   type: pokemonActionTypes.GET_POKEMON_DETAIL;
-  limit: number;
+  name: string;
 }
-export const getPokemonDetailAC: (limit: number) => GetPokemonDetailAction = (
-  limit
+export const getPokemonDetailAC: (name: string) => GetPokemonDetailAction = (
+  name
 ) => ({
   type: pokemonActionTypes.GET_POKEMON_DETAIL,
-  limit,
+  name,
 });
 
 export interface SetPokemonDetailAction {
