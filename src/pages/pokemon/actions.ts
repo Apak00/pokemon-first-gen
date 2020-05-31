@@ -10,12 +10,15 @@ export enum pokemonActionTypes {
 export interface GetPokemonListAction {
   type: pokemonActionTypes.GET_POKEMON_LIST;
   limit: number;
+  searchText: string;
 }
-export const getPokemonListAC: (limit: number) => GetPokemonListAction = (
-  limit
-) => ({
+export const getPokemonListAC: (
+  limit: number,
+  searchText: string
+) => GetPokemonListAction = (limit, searchText) => ({
   type: pokemonActionTypes.GET_POKEMON_LIST,
   limit,
+  searchText,
 });
 
 export interface SetPokemonListAction {
