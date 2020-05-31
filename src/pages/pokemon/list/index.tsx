@@ -29,7 +29,7 @@ export const PokemonList = () => {
   return (
     <div className={styles.listPageContainer}>
       <div className={styles.listPageHeader}>
-        <img src={pokemonLogo} />
+        <img src={pokemonLogo} alt={"pokemon logo"} />
         <span className={styles.headerText}>Generation 1</span>
         <span>{pokemonList?.length} Pokemon</span>
       </div>
