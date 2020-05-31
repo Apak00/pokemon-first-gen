@@ -5,6 +5,7 @@ import { getPokemonListAC } from "../actions";
 import { numberOfFirstGenerationPokemon } from "./constants";
 import { PokemonListItem } from "../interfaces";
 import { GlobalState } from "../../../store/interfaces";
+import styles from "./styles.scss";
 
 export const PokemonList = () => {
   const dispatch: Dispatch = useDispatch();
@@ -22,7 +23,9 @@ export const PokemonList = () => {
     <div>
       List page
       {pokemonList.map((item: PokemonListItem) => (
-        <div>{item.name}</div>
+        <div key={item.name} className={styles.pokemonListItem}>
+          {item.name}
+        </div>
       ))}
     </div>
   );
