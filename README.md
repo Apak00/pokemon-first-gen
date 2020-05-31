@@ -1,4 +1,4 @@
-## Pokemon First Generation
+# Pokemon First Generation
 
 A list of first generation pokemons and their details
 
@@ -8,7 +8,7 @@ components folder: consist of reusable components that can be used all over the 
 
 pages folder: each page should be arranged according to routing
 
-# Inside the project each folder might have these files or folders and their purposes are same across the app
+#### Inside the project each folder might have these files or folders and their purposes are same across the app
 
 common: for common files across the folder
 
