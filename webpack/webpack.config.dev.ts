@@ -7,7 +7,7 @@ module.exports = {
   mode: "development",
   plugins,
   devServer: {
-    port: 9000,
+    port: 3000,
     contentBase: "/dist",
     historyApiFallback: true,
   },

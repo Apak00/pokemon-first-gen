@@ -1,4 +1,4 @@
 export default {
-  pokemonList: `api/v2/pokemon`,
-  pokemonDetail: (name: string) => `api/v2/pokemon/${name}`,
+  pokemonList: `https://pokeapi.co/api/v2/pokemon`,
+  pokemonDetail: (name: string) => `https://pokeapi.co/api/v2/pokemon/${name}`,
 };
