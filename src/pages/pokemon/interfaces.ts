@@ -8,6 +8,10 @@ export interface PokemonReducerState {
 export interface PokemonListItem {
   name: string;
 }
-export interface PokemonDetail extends PokemonListItem {
-  year: number;
+
+export interface PokemonDetail {
+  id: number;
+  types: string[];
+  height: number;
+  abilities: string[];
 }
