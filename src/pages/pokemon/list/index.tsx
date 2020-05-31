@@ -37,14 +37,18 @@ export const PokemonList = () => {
         <LoadingIndicator />
       ) : (
         <div className={styles.listWrapper}>
-          {pokemonList.map((item: PokemonListItem) => (
+          {pokemonList.map(({ name }: PokemonListItem) => (
             <Link
-              key={item.name}
+              key={name}
               className={styles.pokemonListItem}
-              to={appRoutes.pokemonDetail(item.name)}
+              to={appRoutes.pokemonDetail(name)}
             >
-              <img src={generateImgUrl(item.name)} />
-              <span>{item.name}</span>
+              <img
+                src={generateImgUrl(name)}
+                loading='lazy'
+                alt={`image-${name}`}
+              />
+              <span>{name}</span>
             </Link>
           ))}
         </div>
