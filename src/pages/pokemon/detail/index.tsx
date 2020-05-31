@@ -37,7 +37,7 @@ export const PokemonDetail: FC<PokemonDetailProps> = (
               <Link className={styles.detailExit} to={appRoutes.pokemonList}>
                 X
               </Link>
-              <img src={generateImgUrl(name)} />
+              <img src={generateImgUrl(name)} alt={`image-${name}`} />
               <div className={styles.detailFeaturesContainer}>
                 <div>
                   <span className={styles.detailTitleText}>ID: </span>
@@ -48,7 +48,7 @@ export const PokemonDetail: FC<PokemonDetailProps> = (
                 <div>
                   <span className={styles.detailTitleText}>Type: </span>
                   <span className={styles.detailValueText}>
-                    {pokemonDetail.types.join(", ")}
+                    {pokemonDetail.types?.join(", ")}
                   </span>
                 </div>
                 <div>
@@ -60,8 +60,8 @@ export const PokemonDetail: FC<PokemonDetailProps> = (
                 <div>
                   <span className={styles.detailTitleText}>Abilities: </span>
                   <ul className={styles.detailValueText}>
-                    {pokemonDetail.abilities.map((item) => (
-                      <li>{item}</li>
+                    {pokemonDetail.abilities?.map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>

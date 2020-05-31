@@ -1,0 +1,16 @@
+import React from "react";
+import "@testing-library/jest-dom/extend-expect";
+import { PokemonDetail } from "../index";
+import { renderWithRouterMatchAndProvider } from "../../../../utils/test-helpers/render-with-router";
+
+it("renders fields", () => {
+  const { getByText } = renderWithRouterMatchAndProvider(PokemonDetail, {
+    route: "/pokemon/bulbasaur",
+    path: "/pokemon/:name",
+  });
+
+  expect(getByText("ID:")).toBeTruthy();
+  expect(getByText("Type:")).toBeTruthy();
+  expect(getByText("Height:")).toBeTruthy();
+  expect(getByText("Abilities:")).toBeTruthy();
+});
