@@ -5,7 +5,7 @@ import {
   GetPokemonDetailAction,
   setPokemonDetailAC,
 } from "./actions";
-import { call, takeLatest, put } from "redux-saga/effects";
+import { call, takeLatest, put, delay } from "redux-saga/effects";
 import pokemonService from "../../services/pokemon/index";
 import { AxiosResponse } from "axios";
 import {
@@ -16,9 +16,14 @@ import { PokemonDetail } from "./interfaces";
 
 function* getPokemonListSaga(action: GetPokemonListAction) {
   try {
+    // debounce if text exists
+    if (action.searchText) {
+      yield delay(500);
+    }
     const response: AxiosResponse<PokemonListResponse> = yield call(
       pokemonService.getPokemonList,
-      action.limit
+      action.limit,
+      action.searchText
     );
 
     yield put(setPokemonListAC(response.data.results));

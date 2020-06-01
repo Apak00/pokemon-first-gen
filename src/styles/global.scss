@@ -16,6 +16,10 @@ $font-size-20: 20px;
 $font-size-22: 22px;
 $font-size-24: 24px;
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   padding: 0;
