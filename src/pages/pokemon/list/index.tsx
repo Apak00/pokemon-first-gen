@@ -47,7 +47,11 @@ export const PokemonList = (props: any) => {
         <img src={pokemonLogo} alt={"pokemon logo"} />
         <span className={styles.headerText}>Generation 1</span>
         <span>{pokemonList?.length} Pokemon</span>
-        <input onChange={onSearchInputChange} value={searchText} />
+        <input
+          onChange={onSearchInputChange}
+          value={searchText}
+          placeholder={"Search"}
+        />
       </div>
       {isPokemonListFetching ? (
         <LoadingIndicator />
