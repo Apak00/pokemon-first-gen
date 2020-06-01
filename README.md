@@ -8,11 +8,7 @@ A list of first generation pokemons and their details
 
 - **pages** folder: each page should be arranged according to routing
 
-<<<<<<< HEAD
 ##### Inside the project each folder might have these files or folders and their purposes are same across the app
-=======
-#### Inside the project each folder might have these files or folders and their purposes are same across the app
->>>>>>> master
 
 - **common**: for common files across the folder
 
